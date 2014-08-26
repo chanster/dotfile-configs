@@ -7,7 +7,7 @@ export EDITOR=vim
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='\u@\h \W\ $ '
+PS1='\u@\h \W $ '
 
 ## Modified commands ## {{{
 alias diff='colordiff'              # requires colordiff package
@@ -18,7 +18,6 @@ alias du='du -c -h'
 alias mkdir='mkdir -p -v'
 alias nano='nano -w'
 alias ping='ping -c 5'
-alias vi ='vim'
 # }}}
 
 ## New commands ## {{{
