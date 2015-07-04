@@ -1,2 +1,2 @@
-# arch-linux-install
-Arch LInux Setup
+# App and Term configs
+
