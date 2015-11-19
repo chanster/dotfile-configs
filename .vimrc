@@ -60,6 +60,7 @@ set number            " Show line numbers.
 set showmatch         " Show matching bracket
 set foldmethod=marker " code folding with marker, default {{{,}}}}
 set ruler             " Show the line and column number of the cursor position, separated by a comma.
+set diffopt+=vertical " set Gdiff to verical split
 " }}}
 
 " search {{{
