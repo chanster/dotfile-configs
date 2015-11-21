@@ -43,7 +43,7 @@ set autoindent     " copy indent from previous line
 set backspace=2    " indent,eol,start
 set textwidth=120  " Maximum width of text that is being inserted. Longer line will be broken after white space to get this width.
 
-autocmd BufNewFile,BufRead * setlocal formatoptions=tcrq " work around for 'set formatoptions' with C file plugin
+autocmd BufNewFile,BufRead * setlocal formatoptions=crq " work around for 'set formatoptions' with C file plugin
                 " letter  meaning when present in 'formatoptions'
                 " ------  ---------------------------------------
                 " t       Auto-wrap text using textwidth (does not apply to comments)
@@ -71,12 +71,12 @@ set smartcase       " Override the 'ignorecase' option if the search pattern con
  " }}}
 
 " Mouse {{{
-set mouse=a         " Enable the use of the mouse.
+set mouse-=a         " Enable the use of the mouse.
 " }}}
 
 " Mappings {{{
-:noremap <C-n> :bnext<CR>
-:noremap <C-p> :bprevious<CR>
+:noremap <C-n> :bnext!<CR>
+:noremap <C-p> :bprevious!<CR>
 :noremap <space> za<CR>
 " }}}
 
