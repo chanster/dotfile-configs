@@ -1,6 +1,4 @@
-#
 # ~/.bashrc
-#
 
 export EDITOR=vim
 export TERM=xterm-256color
@@ -8,10 +6,13 @@ export TERM=xterm-256color
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [ "`id -u`" -eq 0 ]; then
-    PS1="\[\033[m\]\[\e[1;31m\]\u\[\e[1;36m\]\[\033[m\]@\[\e[1;36m\]\h\[\033[m\]:\[\e[0m\]\[\e[1;32m\][\W]> \[\e[0m\]"
+SC="\[\033["
+EC="\[\033[0m\]"
+
+if [ "`id -u`" = 0 ]; then
+    export PS1='┌─[`if [ $? = 0 ]; then echo "\[\033[32m\]✔\[\033[0m\]"; else echo "\[\033[31m\]✗\[\033[0m\]"; fi`]( \A )─\[\033[31m\]\u\[\033[0m\]@\[\033[36m\]\h\[\033[0m\]:[\[\033[32m\]\w\[\033[0m\]]\n└─# '
 else
-    PS1="\[\033[m\]\[\e[1m\]\u\[\e[1;36m\]\[\033[m\]@\[\e[1;36m\]\h\[\033[m\]:\[\e[0m\]\[\e[1;32m\][\W]> \[\e[0m\]"
+    export PS1='┌─[`[[ $? = 0 ]] && echo "\[\033[32m\]✔\[\033[0m\]" || echo "\[\033[31m\]✗\[\033[0m\]";`]( \A )─\u@\[\033[36m\]\h\[\033[0m\]:[\[\033[32m\]\w\[\033[0m\]]\n└─$ '
 fi
 
 ## Autocomplete ## {{{
@@ -19,34 +20,5 @@ complete -cf sudo
 complete -cf man
 ## }}}
 
-## Modified commands ## {{{
-alias diff='colordiff'              # requires colordiff package
-alias grep='grep --color=auto'
-alias more='less'
-alias df='df -h'
-alias du='du -c -h'
-alias mkdir='mkdir -p -v'
-alias nano='nano -w'
-alias ping='ping -c 5'
-alias tree='tree -L 3 -C'
-# }}}
-
-## New commands ## {{{
-alias da='date "+%A, %B %d, %Y [%T]"'
-alias du1='du --max-depth=1'
-alias hist='history | grep'         # requires an argument
-alias openports='ss --all --numeric --processes --ipv4 --ipv6'
-alias pgg='ps -Af | grep'           # requires an argument
-alias ..='cd ..'
-# }}}
-
-## ls ## {{{
-alias ls='ls -hF --color=auto'
-alias lr='ls -R'                    # recursive ls
-alias ll='ls -l'
-alias la='ll -A'
-alias lx='ll -BX'                   # sort by extension
-alias lz='ll -rS'                   # sort by size
-alias lt='ll -rt'                   # sort by date
-# }}}
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
 
