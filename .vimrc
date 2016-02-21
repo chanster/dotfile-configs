@@ -7,11 +7,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'gmarik/Vundle.vim'      " let Vundle manage Vundle, required
-Plugin 'valloric/YouCompleteMe' " code completion
-Plugin 'tpope/vim-fugitive'     " git
-Plugin 'bling/vim-airline'      " nice statusbar
-Plugin 'flazz/vim-colorschemes' " colorschemes
+Plugin 'gmarik/Vundle.vim'              " let Vundle manage Vundle, required
+"Plugin 'valloric/YouCompleteMe'         " code completion
+Plugin 'tpope/vim-fugitive'             " git
+Plugin 'vim-airline/vim-airline'        " nice statusbar
+Plugin 'vim-airline/vim-airline-themes' " airline themes
+Plugin 'flazz/vim-colorschemes'         " vim colorschemes
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
