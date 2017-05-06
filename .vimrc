@@ -7,7 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 " Keep Plugin commands between vundle#begin/end.
-Plugin 'gmarik/Vundle.vim'              " let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'              " let Vundle manage Vundle, required
 "Plugin 'valloric/YouCompleteMe'         " code completion
 Plugin 'tpope/vim-fugitive'             " git
 Plugin 'vim-airline/vim-airline'        " nice statusbar
