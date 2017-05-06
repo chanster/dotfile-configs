@@ -71,10 +71,6 @@ set ignorecase      " Ignore case in search patterns.
 set smartcase       " Override the 'ignorecase' option if the search pattern contains upper case characters.
  " }}}
 
-" Mouse {{{
-set mouse-=a         " Enable the use of the mouse.
-" }}}
-
 " Mappings {{{
 :noremap <C-n> :bnext!<CR>
 :noremap <C-p> :bprevious!<CR>
